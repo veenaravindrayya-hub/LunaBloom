@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+}
+
+@layer base {
+  body {
+    background-color: #fffbf8;
+    color: #2e1a2b;
+    background-image:
+      radial-gradient(at 12% 8%, rgba(252, 231, 243, 0.72) 0px, transparent 48%),
+      radial-gradient(at 88% 12%, rgba(243, 232, 255, 0.68) 0px, transparent 48%),
+      radial-gradient(at 50% 92%, rgba(255, 237, 213, 0.62) 0px, transparent 52%);
+    background-attachment: fixed;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.wellness-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 207, 232, 0.65);
+  box-shadow: 0 12px 32px -12px rgba(190, 24, 93, 0.1);
+}
+
+.wellness-card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.wellness-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgba(168, 85, 247, 0.16);
+  border-color: rgba(244, 114, 182, 0.55);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4.5s ease-in-out infinite;
+}
+
+/* Custom thin pastel scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}
